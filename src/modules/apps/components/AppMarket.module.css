@@ -1,0 +1,101 @@
+.link {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.link:link {
+  text-decoration-line: none;
+}
+.link:visited {
+  color: inherit;
+}
+.link:hover {
+  border-color: var(--primary);
+}
+.link:focus,
+.link:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: "100%";
+}
+
+.container:hover > * {
+  fill: var(--primary);
+  color: var(--primary);
+
+  transition: color 0.3s ease;
+}
+
+.label {
+  flex: 1;
+}
+
+.btn {
+  width: 16em;
+  height: 6em;
+  border-radius: 1em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 350%;
+  background: var(--conic-gradient);
+}
+
+.btn::after {
+  content: "Hover Me!";
+  position: absolute;
+  background-color: var(--bg-color);
+  width: 96%;
+  height: 86%;
+  border-radius: 0.4em;
+
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:hover::before {
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
